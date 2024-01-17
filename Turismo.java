@@ -1,14 +1,8 @@
-
-/**
- * Aggiungi qui una descrizione della classe Main
- * 
- * @author (il tuo nome) 
- * @version (un numero di versione o una data)
- */
 public class Turismo{
     protected Eventi[] eventiTotali;
     public Turismo(){
-        eventiTotali = new Eventi[100];
+        eventiTotali = new Eventi[3];
+        for(int i=0;i<eventiTotali.length;i++) eventiTotali[i] = new Eventi(i);
     }
     public void addEvento(Eventi e){
         int i = 0;
@@ -19,5 +13,12 @@ public class Turismo{
         String stringa = "";
         for(Eventi e:eventiTotali) stringa = stringa.concat(e.concatenaSeLocalita(localita) + "\n");
         return stringa;
+    }
+    public Eventi piuConsigliato(){
+        Eventi piuConsigliato = eventiTotali[0];
+        for(Eventi e:eventiTotali){
+            if(e.quantiConsigliato()>piuConsigliato.quantiConsigliato()) piuConsigliato = e;
+        }
+        return piuConsigliato;
     }
 }

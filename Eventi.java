@@ -10,15 +10,41 @@ public class Eventi
     protected String localita;
     protected String descrizione;
     protected boolean[] feedback;
-    protected String codiceunivoco;
-    public Eventi(String localita, String descrizione)
+    protected int partecipanti;
+    protected String codiceUnivoco;
+    public Eventi(int indice)
+    {
+        this.localita = getString("inserisci la località di questo evento");
+        this.descrizione = getString("inserisci la località di questo evento");
+        this.partecipanti = getInt("inserisci il numero dei partecipanti");
+        this.feedback = new boolean[partecipanti];
+        for(int i = 0;i<feedback.length;i++){
+            feedback[i] = getBoolean("al " + (i+1) + "° partecipante è piaciuto l'evento?");
+        }
+        if(indice<100){
+            codiceUnivoco = "0";
+            if(indice<10){
+                codiceUnivoco += "0";
+            }
+        }
+        codiceUnivoco += indice;
+    }
+    public Eventi(String localita, String descrizione, int partecipanti, int indice)
     {
         this.localita = localita;
         this.descrizione = descrizione;
+        this.partecipanti = partecipanti;
         this.feedback = new boolean[20];
         for(int i = 0;i<feedback.length;i++){
             feedback[i] = getBoolean("al " + (i+1) + "° partecipante è piaciuto l'evento?");
         }
+        if(indice<100){
+            codiceUnivoco = "0";
+            if(indice<10){
+                codiceUnivoco += "0";
+            }
+        }
+        codiceUnivoco += indice;
     }
     public void Consigliato(){
         int positivi = 0;
@@ -45,14 +71,28 @@ public class Eventi
         for(int i=0;i<feedback.length;i++){
             info = info.concat("\t\tconsigliato " + (i + 1) + ":\t" + feedback[i] + "\n");
         }
-        info += "\tCodice Univoco:\t" + codiceunivoco + "\n"; 
+        info += "\tCodice Univoco:\t" + codiceUnivoco + "\n";
         return info;
     }
     public boolean getBoolean(String stringa){
         return getInt(stringa + "\ninserisci 0 per no e qualsiasi altro valore per sì") != 0;
     }
+
     public int getInt(String stringa){
         System.out.println(stringa);
         return new java.util.Scanner(System.in).nextInt();
+    }
+
+    public String getString(String stringa){
+        System.out.println(stringa);
+        return new java.util.Scanner(System.in).nextLine();
+    }
+
+    public int quantiConsigliato(){
+        int quanti = 0;
+        for(boolean n:feedback){
+            if(n) quanti++;
+        }
+        return quanti;
     }
 }
