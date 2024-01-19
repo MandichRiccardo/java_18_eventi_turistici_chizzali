@@ -3,5 +3,6 @@ public class Test{
         Turismo t = new Turismo();
         System.out.println(t.trovaEventi("Venezia"));
         System.out.println(t.piuConsigliato());
+         /**/
     }
 }

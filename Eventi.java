@@ -1,10 +1,3 @@
-
-/**
- * Aggiungi qui una descrizione della classe Eventi
- * 
- * @author (il tuo nome) 
- * @version (un numero di versione o una data)
- */
 public class Eventi
 {
     protected String localita;
