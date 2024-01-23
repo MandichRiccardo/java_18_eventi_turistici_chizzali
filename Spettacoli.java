@@ -1,5 +1,13 @@
 public class Spettacoli extends Eventi{
-    public Spettacoli(int indice) {
-        super(indice);
+
+    //protected boolean 
+    public Spettacoli() {
+        super();
+    }
+
+    @Override
+    public String toString(){
+        String info = super.toString();
+        return info;
     }
 }

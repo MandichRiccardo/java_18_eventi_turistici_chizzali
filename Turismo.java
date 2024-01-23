@@ -2,7 +2,7 @@ public class Turismo{
     protected Eventi[] eventiTotali;
     public Turismo(){
         eventiTotali = new Eventi[3];
-        for(int i=0;i<eventiTotali.length;i++) eventiTotali[i] = new Eventi(i);
+        for(int i=0;i<eventiTotali.length;i++) eventiTotali[i] = new Eventi();
     }
     public void addEvento(Eventi e){
         int i = 0;

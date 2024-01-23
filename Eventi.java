@@ -5,8 +5,8 @@ public class Eventi
     protected boolean[] feedback;
     protected int partecipanti;
     protected String codiceUnivoco;
-    public Eventi(int indice)
-    {
+    protected static int indice;
+    public Eventi(){
         this.localita = getString("inserisci la località di questo evento");
         this.descrizione = getString("inserisci la località di questo evento");
         this.partecipanti = getInt("inserisci il numero dei partecipanti");
@@ -49,12 +49,11 @@ public class Eventi
         System.out.println("i feedback positivi su questo evento sono: " + positivi + "\n");
         System.out.println("i feedback negativi su questo evento sono: " + negativi + "\n");
     }
-    public boolean ControllaDisponibilita(String data, String meteo)
-    {
+    public boolean ControllaDisponibilita(String data, String meteo) {
         return true;
     }
     public String concatenaSeLocalita(String localita){
-        if(this.localita == localita) return this + "";
+        if(this.localita.equals(localita)) return this + "";
         else return "";
     }
     public String toString(){
