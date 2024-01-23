@@ -1,8 +1,7 @@
 public class Turismo{
     protected Eventi[] eventiTotali;
-    public Turismo(){
-        eventiTotali = new Eventi[3];
-        for(int i=0;i<eventiTotali.length;i++) eventiTotali[i] = new Eventi();
+    public Turismo(int numeroEventi){
+        eventiTotali = new Eventi[numeroEventi];
     }
     public void addEvento(Eventi e){
         int i = 0;
@@ -10,7 +9,7 @@ public class Turismo{
         eventiTotali[i] = e;
     }
     public String trovaEventi(String localita){
-        String stringa = "";
+        String stringa = "ho trovato i seguenti eventi:\n";
         for(Eventi e:eventiTotali) stringa = stringa.concat(e.concatenaSeLocalita(localita) + "\n");
         return stringa;
     }
