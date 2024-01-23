@@ -20,6 +20,9 @@ public class TourGuidati extends Eventi{
     @Override
     public String toString(){
         String info = super.toString();
+        info += "\tOrario:\t" + orario + "\n";
+        info += "\tPostiDisponibili\t" + postiDisponibili + "\n";
+        for(int i = 0; i<giorni.length; i++) System.out.println("\t\tGiorno " + (i+1) + ":\t" + giorni[i] + "\n");
         return info;
     }
 }
