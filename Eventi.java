@@ -6,9 +6,10 @@ public class Eventi
     protected int partecipanti;
     protected String codiceUnivoco;
     protected static int indice;
+
     public Eventi(){
         this.localita = getString("inserisci la località di questo evento");
-        this.descrizione = getString("inserisci la località di questo evento");
+        this.descrizione = getString("inserisci la descrizione di questo evento");
         this.partecipanti = getInt("inserisci il numero dei partecipanti");
         this.feedback = new boolean[partecipanti];
         for(int i = 0;i<feedback.length;i++){

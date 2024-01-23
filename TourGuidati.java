@@ -1,7 +1,16 @@
 public class TourGuidati extends Eventi{
 
+    private int postiDisponibili;
+    private String orario;
+    private int[] giorni;
     public TourGuidati() {
         super();
+        codiceUnivoco = codiceUnivoco.toUpperCase();
+        codiceUnivoco = codiceUnivoco.replace('E', 'T');
+        giorni = new int[getInt("quanti giorni in un mese è presente questo tour?")];
+        for(int i=0;i<giorni.length;i++) giorni[i]=getInt("inserisci il " + (i+1) + "° giorno di mostra");
+        orario = getString("Inserisci l'orario del tour: ");
+        postiDisponibili = getInt("Inserisci il numero di posti disponibili del tour.");
     }
 
     @Override
