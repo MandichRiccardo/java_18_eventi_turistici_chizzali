@@ -31,8 +31,9 @@ public class Eventi
         for(int i = 0;i<feedback.length;i++){
             feedback[i] = getBoolean("al " + (i+1) + "° partecipante è piaciuto l'evento?");
         }
+        codiceUnivoco = "E";
         if(indice<100){
-            codiceUnivoco = "0";
+            codiceUnivoco += "0";
             if(indice<10){
                 codiceUnivoco += "0";
             }
@@ -49,7 +50,8 @@ public class Eventi
         System.out.println("i feedback positivi su questo evento sono: " + positivi + "\n");
         System.out.println("i feedback negativi su questo evento sono: " + negativi + "\n");
     }
-    public boolean ControllaDisponibilita(String data, String meteo) {
+    public boolean ControllaDisponibilita(String data, int postiRichiesti, String meteo) {
+        data = data.toLowerCase();
         return true;
     }
     public String concatenaSeLocalita(String localita){
