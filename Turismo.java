@@ -1,7 +1,11 @@
 public class Turismo{
     protected Eventi[] eventiTotali;
     public Turismo(int numeroEventi){
-        eventiTotali = new Eventi[numeroEventi];
+        if (numeroEventi<=100) eventiTotali = new Eventi[numeroEventi];
+        else {
+            eventiTotali = new Eventi[100];
+            System.out.println("ho messo un massimo di 100 eventi come da indicazioni");
+        }
     }
     public void addEvento(Eventi e){
         int i = 0;

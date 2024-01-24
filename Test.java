@@ -1,7 +1,8 @@
 public class Test{
     public static void main(String[] args) {
-        Turismo t = new Turismo(100);
-        esecuzione(t);
+        System.out.println("inserisci il numero massimo di eventi inseribili");
+        Turismo t = new Turismo(new java.util.Scanner(System.in).nextInt());
+        System.out.println(esecuzione(t));
     }
     public static Turismo esecuzione(Turismo t){
         System.out.println("cosa vuoi fare?");
@@ -19,10 +20,16 @@ public class Test{
                 System.out.println("inserisci la località in cui vuoi cercare eventi");
                 System.out.println(t.trovaEventi(new java.util.Scanner(System.in).nextLine()));
             }
-            case 5 -> t.piuConsigliato().ControllaDisponibilita("2024/01/235",7, "nuvoloso");
-            default -> {
+            case 5 -> {
+                boolean disponibile = t.piuConsigliato().ControllaDisponibilita("2024/01/235",7, "nuvoloso");
+                System.out.println("questo evento ");
+                if(!disponibile) System.out.println("non ");
+                System.out.println("è disponibile");
+            }
+            case 6 -> {
                 return t;
             }
+            default -> System.out.println("ATTENZIONE:\nnon esiste un'operazione relativa al numero inserito");
         }
         return esecuzione(t);
     }
