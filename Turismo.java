@@ -23,7 +23,11 @@ public class Turismo{
     public Eventi piuConsigliato(){
         Eventi piuConsigliato = eventiTotali[0];
         for(Eventi e:eventiTotali){
-            if(e.quantiConsigliato()>piuConsigliato.quantiConsigliato()) piuConsigliato = e;
+            try {
+                if (e.quantiConsigliato() > piuConsigliato.quantiConsigliato()) piuConsigliato = e;
+            } catch (NullPointerException exception) {
+
+            }
         }
         return piuConsigliato;
     }
