@@ -19,7 +19,7 @@ public class Test{
                 System.out.println("inserisci la località in cui vuoi cercare eventi");
                 System.out.println(t.trovaEventi(new java.util.Scanner(System.in).nextLine()));
             }
-            case 5 -> t.piuConsigliato().ControllaDisponibilita("22/01/2024",7, "nuvoloso");
+            case 5 -> t.piuConsigliato().ControllaDisponibilita("2024/01/235",7, "nuvoloso");
             default -> {
                 return t;
             }
