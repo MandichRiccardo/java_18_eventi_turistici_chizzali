@@ -10,7 +10,14 @@ public class Turismo{
     }
     public String trovaEventi(String localita){
         String stringa = "ho trovato i seguenti eventi:\n";
-        for(Eventi e:eventiTotali) stringa = stringa.concat(e.concatenaSeLocalita(localita) + "\n");
+        for(Eventi e:eventiTotali){
+            try{
+                stringa = stringa.concat(e.concatenaSeLocalita(localita) + "\n");
+            }
+            catch (NullPointerException exception){
+
+            }
+        }
         return stringa;
     }
     public Eventi piuConsigliato(){
