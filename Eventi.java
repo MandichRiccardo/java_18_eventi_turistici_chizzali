@@ -22,8 +22,7 @@ public abstract class Eventi{
         }
         codiceUnivoco += indice;
     }
-    public Eventi(String localita, String descrizione, int partecipanti, int indice)
-    {
+    public Eventi(String localita, String descrizione, int partecipanti, int indice){
         this.localita = localita;
         this.descrizione = descrizione;
         this.partecipanti = partecipanti;
